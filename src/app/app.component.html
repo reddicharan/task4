@@ -1,0 +1,100 @@
+<app-header></app-header>
+
+<div class="pageheader">
+  <div class="logo">
+  <h1>Country name City name </h1>
+
+  </div>
+ <div class="socialwrapper">
+    <div class="youtube">
+     
+      <h1>Selected  hear</h1>
+     
+    </div>
+    <div class="youtube">
+     
+     
+    </div>
+  </div>
+  <div class="socialwrapper">
+    <div class="youtube">
+     <!-- <img src="/assets/images/medium.png" height="20%">-->
+     <!-- <h4><a href="https://medium.com/@media_9518">@media_9518</a></h4>-->
+    </div>
+    <div class="youtube">
+    <!--  <img src="/assets/images/twitter.png" height="100%">-->
+    <!--  <h4><a href="https://twitter.com/techbriel">@techbriel</a></h4>-->
+    </div>
+
+  </div>
+  <div class="socialwrapper">
+
+    <div class="youtube">
+    
+
+     
+    </div>
+  </div>
+</div>
+<div class="selectwrapper">
+<div class="selectcontainer">
+
+  <mat-form-field appearance="fill">
+    <mat-label>country</mat-label>
+    <mat-select [(ngModel)]="countrySelected" (ngModelChange)="onCountrySelected($event)">
+      <mat-option *ngFor="let country of listcountry" [value]="country.iso2">
+        {{country.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>State</mat-label>
+    <mat-select [(ngModel)]="selectedState" (ngModelChange)="onStateSelected()" >
+      <mat-option *ngFor="let state of listState" [value]="state.iso2">
+        {{state.name}}
+      </mat-option>
+    </mat-select>
+
+
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>City</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let city of listCity" [value]="city.id">
+        {{city.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="propertiesseletced">
+
+
+
+<div class="state">
+  <h6>States</h6>
+<span *ngFor="let state of listState">{{ state.name }}</span>
+
+</div>
+<div class="city">
+  <h6>Cities</h6>
+<span *ngFor="let city of listCity">{{ city.name }}</span>
+</div>
+</div>
